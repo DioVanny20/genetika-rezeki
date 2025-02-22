@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetika Rezeki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #004d25;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .sub-header {
+            font-size: 16px;
+            color: #ddd;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            width: 280px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Styling tombol WhatsApp */
+        .btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+            gap: 10px;
+        }
+
+        /* Efek hover */
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ikon */
+        .btn-whatsapp i {
+            font-size: 22px;
+        }
+
+        /* Dropdown */
+        .reseller-container {
+            margin-top: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Genetika Rezeki
+        <div class="sub-header">Rahasia Ilmu Rezeki dalam Buku & Kelas Eksklusif</div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <img src="Images/Buku1.jpg" alt="Buku Genetika Rezeki">
+                <h3>FOR SALE</h3>
+                <p>Harga: 250.000</p>
+                <p>"Memahami Genetika Rezeki yang tersaji dalam buku ini, pembaca diajak untuk mengenali jalan mudah dalam mengumpulkan rezeki melalui karakter genetiknya."</p>
+            </div>
+            <div class="card">
+                <img src="Images/Buku2.jpg" alt="Pre-order Buku">
+                <h3>PRE-ORDER</h3>
+                <p>07-28 FEB</p>
+                <p><del>195.000</del> 130.000</p>
+                <p>Dengan fitrah yang terjaga, anak tumbuh sebagai insan yang cerdas akal, kuat ruh, luas rasa, dan sehat raga.</p>
+            </div>
+            <div class="card" style="width: 100%; max-width: 600px;">
+                <img src="Images/E-BOOK.jpg" alt="Kelas Genetika Rezeki">
+                <h3>FOR SALE</h3>
+                <p>Harga: 145K</p>
+                <p>Kelas eksklusif bimbingan langsung tentang Genetika Rezeki untuk meningkatkan pemahaman dan penerapan dalam kehidupan sehari-hari.</p>
+            </div>
+        </div>
+
+        <!-- Pilih Reseller -->
+        <div class="reseller-container">
+            <label for="resellerSelect">Pilih Reseller:</label>
+            <select id="resellerSelect">
+                <option value="6281234567890">Reseller 1</option>
+                <option value="628987654321">Reseller 2</option>
+                <option value="6281122334455">Reseller 3</option>
+                <option value="6285566778899">Reseller 4</option>
+                <option value="6289988776655">Reseller 5</option>
+                <option value="6282233445566">Reseller 6</option>
+                <option value="6283322114455">Reseller 7</option>
+                <option value="6286677889900">Reseller 8</option>
+                <option value="6287766554433">Reseller 9</option>
+                <option value="6288899001122">Reseller 10</option>
+            </select>
+        </div>
+
+        <!-- Tombol WhatsApp -->
+        <div class="btn-container">
+            <button class="btn-whatsapp" onclick="redirectToWhatsApp()">
+                <i>📲</i> Dapatkan Sekarang
+            </button>
+        </div>
+
+        <script>
+        function redirectToWhatsApp() {
+            let selectElement = document.getElementById("resellerSelect");
+            let phoneNumber = selectElement.value; // Mengambil nomor HP reseller yang dipilih
+            let message = "Halo, saya tertarik dengan buku Genetika Rezeki.";
+            let waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.location.href = waLink;
+        }
+        </script>
+
+    </div>
+</body>
+</html>
